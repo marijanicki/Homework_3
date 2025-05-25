@@ -1,3 +1,4 @@
+#pragma once
 #include "Imediciones.hpp"
 #include "MedicionBase.hpp"
 #include "Presion_pos.hpp"
@@ -6,10 +7,11 @@ using namespace std;
 
 class SaveFlightData{
     public:
-        unique_ptr<Posicion> posicion;
-        unique_ptr<Presion> presion;
+        Posicion posicion;
+        Presion presion;
 
-        SaveFlightData(const Posicion& p, const Presion& q);
+        SaveFlightData(){};
+        SaveFlightData(const Posicion& p, const Presion& q):posicion(p), presion(q) {}
         void serializar(ofstream& out);
         void deserializar(ifstream& in);
         void imprimir();

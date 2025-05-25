@@ -4,7 +4,7 @@
 using namespace std;
 class Imediciones{
     public:
-        virtual void serializar(ofstream& out)= 0;
+        virtual void serializar(ofstream& out)const = 0;
         virtual void deserializar(ifstream& in)= 0;
-        virtual ~Imediciones();
+        virtual ~Imediciones(){};
 };
