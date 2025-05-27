@@ -5,7 +5,7 @@
 using namespace std;
 //double, string, vector int
 
-using vect = vector<int>;
+using int_vect = vector<int>;
 
 template<typename T>
 class Clase1{
@@ -14,25 +14,37 @@ class Clase1{
     public:
         Clase1(){};
         void add(T new_data){datos.push_back(new_data);}
-        vector<string> procesar(){
+        
+        string procesar(){
             if constexpr(is_floating_point<T>::value){
-               vector<string> str_vect;
-                for(auto val: datos){
-                    str_vect.push_back(to_string(val));
+               string str_vect = "[";
+                for(size_t i=0; i<2; i++){
+                    str_vect += to_string(datos[i])+',';
                 }
+                str_vect += to_string(datos[2])+"],";
                 return str_vect;
             }
             else if constexpr(is_same<T, string>::value){
-                return datos;
-            }
-            else if constexpr(is_same<T,vect>::value){
-                vector<string> str_vect;
+                string str_vect;
                 for(auto val: datos){
-                    str_vect.push_back(to_string(val));  
+                    str_vect += val;
                 }
-                 return str_vect;
-            }
-            
+                return str_vect;
+                
+            }  
+            /*
+            else if constexpr(is_same<T, int_vect>::value){
+                string str_mtx = '[';
+                for(size_t i = 0; i<datos.size();i++){
+                    str_mtz += '['
+                    for(size_t j = 0; j < datos[i].size();j++){
+                        str_mtx += to_string(datos[i][j]);
+                        cout << str_mtx<<endl;
+                    }
+                }
+
+
+            }*/
         }
       
 };
