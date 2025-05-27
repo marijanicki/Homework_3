@@ -1,6 +1,7 @@
 #include "Clase1.hpp"
 #include <iostream>
 #include <typeinfo>
+#include <vector>
 using namespace std;
 
 int main(){
@@ -19,12 +20,12 @@ int main(){
         cout << val << typeid(val).name()<<endl;
     }
     Clase1<vector<int>> ej3;
-    vector<int> a = {1,2}
-    vector<int> b = {3,4}
-    ej2.add();
-    ej2.add("mundo");
-     vector<string> new_v2 = ej2.procesar();
-    for(auto val: new_v2){
+    vector<int> a = {1,2};
+    vector<int> b = {3,4};
+    ej3.add(a);
+    ej3.add(b);
+    vector<string> new_v3 = ej3.procesar();
+    for(auto val: new_v3){
         cout << val << typeid(val).name()<<endl;
     }
 }
