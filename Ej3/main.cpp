@@ -15,18 +15,18 @@ int main(){
     
     Clase1<string> ej2;
     ej2.add("Hola");
-    ej2.add("mundo");
+    ej2.add("Mundo");
     string new_v2 = ej2.procesar();
     cout << new_v2 <<"\n"<< typeid(new_v2).name()<<endl;
     
-    /*
+    
     Clase1<vector<int>> ej3;
     vector<int> a = {1,2};
     vector<int> b = {3,4};
     ej3.add(a);
     ej3.add(b);
-    vector<string> new_v3 = ej3.procesar();
-    for(auto val: new_v3){
-        cout << val << typeid(val).name()<<endl;
-    }*/
+    string new_v3 = ej3.procesar();
+   
+        cout << new_v3 <<endl;
+    
 }

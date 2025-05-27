@@ -25,26 +25,26 @@ class Clase1{
                 return str_vect;
             }
             else if constexpr(is_same<T, string>::value){
-                string str_vect;
-                for(auto val: datos){
-                    str_vect += val;
-                }
-                return str_vect;
+                return "[\""+datos[0]+"\", \""+datos[1]+"\"],";
                 
             }  
-            /*
             else if constexpr(is_same<T, int_vect>::value){
-                string str_mtx = '[';
+                string str_mtx = "[";
                 for(size_t i = 0; i<datos.size();i++){
-                    str_mtz += '['
+                    str_mtx += "[";
                     for(size_t j = 0; j < datos[i].size();j++){
                         str_mtx += to_string(datos[i][j]);
-                        cout << str_mtx<<endl;
+                        if(j==0){
+                            str_mtx += ",";
+                        } 
+                    }
+                    str_mtx+= "]";
+                    if(i ==0){
+                        str_mtx += ",";
                     }
                 }
-
-
-            }*/
+                str_mtx+= "]";
+                return str_mtx;
+            }
         }
-      
 };
