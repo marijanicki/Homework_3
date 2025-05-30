@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
@@ -29,9 +30,9 @@ class Clase1{
                 
             }  
             else if constexpr(is_same<T, int_vect>::value){
-                string str_mtx = "[";
+                string str_mtx = "[\n";
                 for(size_t i = 0; i<datos.size();i++){
-                    str_mtx += "[";
+                    str_mtx += "\t   [";
                     for(size_t j = 0; j < datos[i].size();j++){
                         str_mtx += to_string(datos[i][j]);
                         if(j==0){
@@ -40,10 +41,10 @@ class Clase1{
                     }
                     str_mtx+= "]";
                     if(i ==0){
-                        str_mtx += ",";
+                        str_mtx += ",\n";
                     }
                 }
-                str_mtx+= "]";
+                str_mtx+= "\n\t  ]";
                 return str_mtx;
             }
         }
