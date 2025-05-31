@@ -9,13 +9,8 @@ class MedicionBase : public Imediciones{
         unique_ptr<float> tiempoMedicion;
     public:
         MedicionBase(){};
-        float getTiempo(){return *tiempoMedicion.get();}
-        void serializar(ofstream& out)const override{
-            out.write(reinterpret_cast<const char*>(tiempoMedicion.get()),sizeof(*tiempoMedicion));    
-        }
-        void deserializar(ifstream& in) override{
-            tiempoMedicion = make_unique<float>(0);
-            in.read(reinterpret_cast<char*>(tiempoMedicion.get()),sizeof(*tiempoMedicion));
-        }
+        float getTiempo();
+        void serializar(ofstream& out)const override;
+        void deserializar(ifstream& in) override;
         virtual void imprimir()=0;
 };

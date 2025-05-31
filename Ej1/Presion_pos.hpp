@@ -25,6 +25,7 @@ class Posicion : public MedicionBase{
 
         Posicion(){};
         Posicion(float lat, float lon, float alt, float t);
+        //Deep copy constructor
         Posicion(const Posicion& p);
         void serializar(ofstream& out)const override;
         void deserializar(ifstream& in) override;
