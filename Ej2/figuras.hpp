@@ -3,51 +3,51 @@
 
 using namespace std;
 
-//completar con todos los sets y gets q correspondan
-class punto{
-    private:
+//clase abstracta para las posiciones de las figuras
+class figuras{
+    protected:
         pair<float, float> posicion;
     public:
-        punto(){};
-        punto(float x, float y);
-        void setPos(pair<float, float> pos);
-        pair<float, float> getPos();
+        figuras(float x, float y);
+        virtual void setPos(pair<float, float> pos);
+        virtual pair<float, float> getPos();
 };
 
-class circulo{
+class punto:public figuras{
+    public:
+        punto(float x, float y);
+};
+
+class circulo:public figuras{
     private:
-        pair<float, float> posicion;
         float radio;
     public:
-        circulo(){};
-        circulo(float x, float y, float r);
-        void setPos(pair<float, float> pos);
-        pair<float, float> getPos();
-        float getRadio(){return radio;}
+        circulo(float x, float y);
+        void setRadio(float r);
+        float getRadio();
 
 };
 
-class elipse{
+class elipse:public figuras{
     private:
-        pair<float, float> pos_centro;
         float a; //semieje_mayor
         float b; //semieje_menor
 
     public:
-        elipse(){};
         elipse(float a, float b);
-        float geta(){return a;}
-        float getb(){return b;}
-
+        void setSemieje_Mayor(float a);
+        void setSemieje_Menor(float b);
+        float geta();
+        float getb();
 };
-class rectangulo{
+class rectangulo:public figuras{
     private:
-        float pos_vertex;
         float ancho;
         float largo;
     public:
-        rectangulo(){};
         rectangulo(float ancho, float largo);
-        float getLargo(){return largo;}
-        float getAncho(){return ancho;}
+        void setLargo(float largo);
+        float getLargo();
+        void setAncho(float ancho);
+        float getAncho();
 };
