@@ -15,8 +15,8 @@ int main(){
     e.setSemieje_Menor(2);
     r.setAncho(2);
     r.setLargo(3);
-    cout<<ProcesadorFigura<punto>::area()<<endl;
-    cout<<ProcesadorFigura<circulo>::area(c)<<endl;
-    cout<<ProcesadorFigura<elipse>::area(e)<<endl;
-    cout<<ProcesadorFigura<rectangulo>::area(r)<<endl;
+    cout<<"Area Punto: "<<ProcesadorFigura<punto>::area()<<endl;
+    cout<<"Area Circulo: "<<ProcesadorFigura<circulo>::area(c)<<endl;
+    cout<<"Area Elipse: "<<ProcesadorFigura<elipse>::area(e)<<endl;
+    cout<<"Area Rectangulo: "<<ProcesadorFigura<rectangulo>::area(r)<<endl;
 }
