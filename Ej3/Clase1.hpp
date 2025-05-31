@@ -5,7 +5,6 @@
 #include <type_traits>
 #include <sstream>
 using namespace std;
-//double, string, vector int
 
 using int_vect = vector<int>;
 

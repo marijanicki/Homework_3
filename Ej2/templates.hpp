@@ -4,9 +4,7 @@
 
 
 template<typename T>
-class ProcesadorFigura {
-
-};
+class ProcesadorFigura {};
 
 template<>
 class ProcesadorFigura <punto>{
